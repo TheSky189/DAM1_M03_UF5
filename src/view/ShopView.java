@@ -29,10 +29,10 @@ public class ShopView extends JFrame implements ActionListener, KeyListener{
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Shop shop;
-	private Object btnContarCaja;
-	private Object btnAnadirProducto;
-	private Object btnAnadirStock;
-	private Object btnEliminarProducto;
+	private JButton btnContarCaja;
+	private JButton btnAnadirProducto;
+	private JButton btnAnadirStock;
+	private JButton btnEliminarProducto;
 
 	/**
 	 * Launch the application.
@@ -74,7 +74,7 @@ public class ShopView extends JFrame implements ActionListener, KeyListener{
 		lblMenu.setBounds(200, 87, 343, 48);
 		contentPane.add(lblMenu);
 		
-		JButton btnContarCaja = new JButton("1. Contar caja");
+		btnContarCaja = new JButton("1. Contar caja");
 		btnContarCaja.setForeground(new Color(102, 255, 255));
 		btnContarCaja.setBackground(new Color(51, 102, 204));
 		btnContarCaja.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -83,7 +83,7 @@ public class ShopView extends JFrame implements ActionListener, KeyListener{
         btnContarCaja.addActionListener(this);
         
 		
-		JButton btnAnadirProducto = new JButton("2. Añadir producto");
+		btnAnadirProducto = new JButton("2. Añadir producto");
 		btnAnadirProducto.setBackground(new Color(0, 153, 255));
 		btnAnadirProducto.setForeground(new Color(51, 255, 255));
 		btnAnadirProducto.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -96,7 +96,7 @@ public class ShopView extends JFrame implements ActionListener, KeyListener{
         btnAnadirProducto.addActionListener(this);
 
 		
-		JButton btnAnadirStock = new JButton("3. Añadir stock");
+		btnAnadirStock = new JButton("3. Añadir stock");
 		btnAnadirStock.setBackground(new Color(51, 153, 204));
 		btnAnadirStock.setForeground(new Color(102, 255, 255));
 		btnAnadirStock.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -109,7 +109,7 @@ public class ShopView extends JFrame implements ActionListener, KeyListener{
         btnAnadirStock.addActionListener(this);
 
 		
-		JButton btnEliminarProducto = new JButton("9. Eliminar producto");
+		btnEliminarProducto = new JButton("9. Eliminar producto");
 		btnEliminarProducto.setForeground(new Color(51, 255, 255));
 		btnEliminarProducto.setBackground(new Color(51, 102, 153));
 		btnEliminarProducto.setFont(new Font("Tahoma", Font.BOLD, 11));
