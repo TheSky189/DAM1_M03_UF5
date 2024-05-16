@@ -81,19 +81,19 @@ public class ProductView extends JDialog implements ActionListener {
         double price = Double.parseDouble(priceField.getText());
 
         // Realizar la operacion correspondiente segun la opcion seleccionada
-        switch (option) {
-            case 2:
-                addProduct(productName, stock, price);
-                break;
-            case 3:
-                addStock(productName, stock);
-                break;
-            case 9:
-                removeProduct(productName);
-                break;
-            default:
-                break;
-        }
+        //switch (option) {
+         //   case 2:
+          //      addProduct(productName, stock, price);
+          //      break;
+           // case 3:
+          //      addStock(productName, stock);
+          //      break;
+          //  case 9:
+          //      removeProduct(productName);
+         //       break;
+         //   default:
+          //      break;
+       // }
     }
 
     // Método para añadir un nuevo producto
