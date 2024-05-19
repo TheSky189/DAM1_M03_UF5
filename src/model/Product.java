@@ -13,17 +13,15 @@ public class Product {
     
     static double EXPIRATION_RATE=0.60;
     
-	public Product(String name, double wholesalerPrice, boolean available, int stock) {
-		//super();
-		//this.id = totalProducts+1;
-		this.name = name;
-		this.wholesalerPrice = wholesalerPrice;
-		this.available = available;
-		this.stock = stock;
-		this.publicPrice = 2 * wholesalerPrice;  // Calcular precio publico
-		//totalProducts++;
-		expire(); // Calcular precio público con descuento
-	}
+    public Product(String name, double wholesalerPrice, boolean available, int stock) {
+        this.name = name;
+        this.wholesalerPrice = wholesalerPrice;
+        this.available = available;
+        this.stock = stock;
+        this.publicPrice = 2 * wholesalerPrice;  // Calcular precio publico
+        expire(); // Calcular precio público con descuento
+    }
+
 
 	
 	//public int getId() {
