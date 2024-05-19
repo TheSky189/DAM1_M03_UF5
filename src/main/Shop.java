@@ -40,7 +40,13 @@ public class Shop {
         sales = new ArrayList<>();
 	}
 
-
+    public ArrayList<Product> getInventory() {
+        return inventory;
+    }
+    
+    public ArrayList<Sale> getSales() {
+        return sales;
+    }
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Shop shop = new Shop();
@@ -437,12 +443,12 @@ public class Shop {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] parts = line.split(";");
-                String productName = parts[0].split(":")[1];
+                String name = parts[0].split(":")[1];
                 double wholesalerPrice = Double.parseDouble(parts[1].split(":")[1]);
                 int stock = Integer.parseInt(parts[2].split(":")[1]);
-                Product product = new Product(productName, wholesalerPrice, true, stock);
-                addProduct(product);
-            }
+                Product product = new Product(name, wholesalerPrice, true, stock);
+                inventory.add(product);
+             }
             scanner.close();
             System.out.println("Inventario cargado correctamente desde el archivo: " + filename);
         } catch (FileNotFoundException e) {
@@ -467,9 +473,9 @@ public class Shop {
 		Scanner scanner = new Scanner(System.in);
         System.out.print("Seleccione el nombre del producto a eliminar: ");
         String name = scanner.next();
-        Product productToRemove = findProduct(name);
-        if (productToRemove != null) {
-            inventory.remove(productToRemove);
+        Product product = findProduct(name);
+        if (product != null) {
+            inventory.remove(product);
             System.out.println("Producto eliminado del inventario: " + name);
         } else {
             System.out.println("Producto no encontrado en el inventario: " + name);
