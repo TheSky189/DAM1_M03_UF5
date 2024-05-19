@@ -33,6 +33,7 @@ public class ShopView extends JFrame implements ActionListener, KeyListener{
 	private JButton btnAnadirProducto;
 	private JButton btnAnadirStock;
 	private JButton btnEliminarProducto;
+	private JButton btnLoadInventory;  // Extra
 
 	/**
 	 * Launch the application.
@@ -113,10 +114,21 @@ public class ShopView extends JFrame implements ActionListener, KeyListener{
 		btnEliminarProducto.setForeground(new Color(51, 255, 255));
 		btnEliminarProducto.setBackground(new Color(51, 102, 153));
 		btnEliminarProducto.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnEliminarProducto.setBounds(391, 278, 249, 42);
+		btnEliminarProducto.setBounds(253, 368, 249, 42);
 		contentPane.add(btnEliminarProducto);
         btnEliminarProducto.addActionListener(this);
+        
+        
+        // Extra LoadInventory NO ACABADO.ERROR
+        btnLoadInventory = new JButton("5. Cargar inventario");
+        btnLoadInventory.setForeground(new Color(51, 255, 255));
+        btnLoadInventory.setBackground(new Color(51, 102, 153));
+        btnLoadInventory.setFont(new Font("Tahoma", Font.BOLD, 11));
+        btnLoadInventory.setBounds(391, 278, 249, 42);
+        contentPane.add(btnLoadInventory);
+        btnLoadInventory.addActionListener(this);
 
+        
 		
 		JLabel lblWallpaper = new JLabel("");
 		// Conseguir ruta directorio del wallpaper
@@ -141,6 +153,8 @@ public class ShopView extends JFrame implements ActionListener, KeyListener{
         
 		
 	}
+	
+	// Manejar acciones de botones
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -158,26 +172,30 @@ public class ShopView extends JFrame implements ActionListener, KeyListener{
 		if (e.getSource() == btnEliminarProducto) {
 			this.openProductView(Constants.OPTION_REMOVE_PRODUCT);
 		}
-        
+        if (e.getSource() == btnLoadInventory) {  // Extra no acabado.ERROR
+            this.openProductView(Constants.OPTION_LOAD_INVENTORY);
+        }
 		
 }
 	
     public void openCashView() {
         // Crear dialog Box
-    	CashView dialog = new CashView(shop);
+    	//CashView dialog = new CashView(shop);
+    	
     	// Resetear visibilidad del dialog
-    	dialog.setVisible(true);
+    	//dialog.setVisible(true);
+        new CashView(shop).setVisible(true);  // nuevo metodo mas sencillo
     }
 
     private void openProductView(int option) {
-    	ProductView dialog = new ProductView(shop, option);
-    	dialog.setVisible(true);
+    	//ProductView dialog = new ProductView(shop, option);
+    	//dialog.setVisible(true);
+        new ProductView(shop, option).setVisible(true);
     }
 
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	
@@ -194,6 +212,9 @@ public class ShopView extends JFrame implements ActionListener, KeyListener{
             break;
         case KeyEvent.VK_3:
             openProductView(Constants.OPTION_ADD_STOCK);
+            break;
+        case KeyEvent.VK_5:  // Extra no acabado.ERROR
+            openProductView(Constants.OPTION_LOAD_INVENTORY);
             break;
         case KeyEvent.VK_9:
             openProductView(Constants.OPTION_ADD_STOCK);
