@@ -9,6 +9,7 @@ public class Product {
     private double wholesalerPrice;
     private boolean available;
     private int stock;
+    private int totalProducts;
     //private static int totalProducts;
     
     static double EXPIRATION_RATE=0.60;
@@ -71,6 +72,8 @@ public class Product {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
+	
+
 	
 	public void expire() {
 	    this.publicPrice *= (1 - 0.60); // Calcular precio público con descuento
